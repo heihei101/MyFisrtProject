@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/selector_rv_home_item_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:src="@mipmap/ic_default"
+                android:layout_margin="8dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+            <LinearLayout
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@id/iv_icon"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textColor="#333"
+                    android:id="@+id/tv_app_name"
+                    android:text="应用名称"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <!--指定星星个数-->
+                <!--指定星星个数 android:isIndicator="true" 星星就不会抢焦点
+                焦点还给线性布局,线性布局就会有点击效果和选择器效果-->
+                <RatingBar
+                    android:id="@+id/rb_star"
+                    android:rating="3.5"
+                    android:progressDrawable="@drawable/rating_bar_bg"
+                    android:layout_width="wrap_content"
+                    android:isIndicator="true"
+                    android:layout_height="15dp" />
+                <TextView
+                    android:textColor="#333"
+                    android:id="@+id/tv_app_size"
+                    android:text="应用大小"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="8dp"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/iv_download"
+                    android:src="@mipmap/ic_download"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textColor="#333"
+                    android:id="@+id/tv_download_state"
+                    android:text="下载"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+        <View
+            android:background="#666"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp">
+        </View>
+        <TextView
+            android:singleLine="true"
+            android:textColor="#333"
+            android:id="@+id/tv_app_des"
+            android:text="应用的描述文本"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

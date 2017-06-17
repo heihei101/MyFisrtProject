@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidAppMarket.iml" filepath="$PROJECT_DIR$/AndroidAppMarket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/googlemarket/googlemarket.iml" filepath="$PROJECT_DIR$/googlemarket/googlemarket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xrefreshlayout/xrefreshlayout.iml" filepath="$PROJECT_DIR$/xrefreshlayout/xrefreshlayout.iml" />
+    </modules>
+  </component>
+</project>
