@@ -45,4 +45,5 @@ dependencies {
     compile 'com.zhy:base-rvadapter:3.0.3'
     //给viewpager添加动画的aar文件
     compile 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
+    compile 'com.github.chrisbanes.photoview:library:1.2.4'
 }

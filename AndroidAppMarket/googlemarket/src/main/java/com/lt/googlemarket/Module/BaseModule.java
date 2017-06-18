@@ -10,9 +10,8 @@ import android.view.View;
 public  abstract class BaseModule<T>{
     //由于不知道不同的fragment中有什么不同的控件,所以写一个基础模块继承
     //参数传一个泛型,以便传入不同类型的参数值
-
     private Context context;
-    private final View view;
+    public View view;
     public BaseModule(Context ctx){
         this.context = ctx;
         view = initView();

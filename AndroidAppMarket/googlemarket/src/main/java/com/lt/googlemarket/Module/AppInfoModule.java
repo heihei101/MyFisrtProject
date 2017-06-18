@@ -1,6 +1,7 @@
 package com.lt.googlemarket.Module;
 
 import android.content.Context;
+import android.text.format.Formatter;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -20,20 +21,21 @@ import butterknife.ButterKnife;
  */
 public class AppInfoModule extends BaseModule<AppInfo> {
 
-    @BindView(R.id.iv_icon)
-    ImageView ivIcon;
+
+    @BindView(R.id.iv_app_icon)
+    ImageView ivAppIcon;
     @BindView(R.id.tv_app_name)
     TextView tvAppName;
-    @BindView(R.id.rb_star)
-    RatingBar rbStar;
-    @BindView(R.id.tv_app_size)
-    TextView tvAppSize;
-    @BindView(R.id.iv_download)
-    ImageView ivDownload;
-    @BindView(R.id.tv_download_state)
-    TextView tvDownloadState;
-    @BindView(R.id.tv_app_des)
-    TextView tvAppDes;
+    @BindView(R.id.rb_app_star)
+    RatingBar rbAppStar;
+    @BindView(R.id.tv_download)
+    TextView tvDownload;
+    @BindView(R.id.tv_version)
+    TextView tvVersion;
+    @BindView(R.id.tv_time)
+    TextView tvTime;
+    @BindView(R.id.tv_size)
+    TextView tvSize;
 
     public AppInfoModule(Context context) {
         super(context);
@@ -41,13 +43,22 @@ public class AppInfoModule extends BaseModule<AppInfo> {
 
     @Override
     public View initView() {
-        View view = Utils.inflact(R.layout.rv_home_item);
-        ButterKnife.bind(this, view);
+        View view = Utils.inflact(R.layout.layout_app_info);
+        ButterKnife.bind(this,view);
         return view;
     }
 
     @Override
     public void bindData(AppInfo appInfo) {
-        Glide.with(Utils.getContext()).load(ConstantUtil.IMGURL+appInfo.iconUrl).into(ivIcon);
+        tvAppName.setText(appInfo.name);
+        tvDownload.setText(appInfo.downloadNum);
+        tvVersion.setText(appInfo.version);
+        tvTime.setText(appInfo.date);
+        tvSize.setText(Formatter.formatFileSize(Utils.getContext(),appInfo.size));
+
+        rbAppStar.setRating(appInfo.stars);
+        Glide.with(Utils.getContext()).load(ConstantUtil.IMGURL+appInfo.iconUrl).into(ivAppIcon);
+        // tvAppName.setText("aaaaaaaaaa");
+        // Glide.with(Utils.getContext()).load(ConstantUtil.IMGURL+appInfo.iconUrl).into(ivIcon);
     }
 }
